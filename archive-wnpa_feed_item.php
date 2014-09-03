@@ -2,7 +2,7 @@
 	<main class="spine-archive-template">
 		<?php if ( have_posts() ) : ?>
 			<?php get_template_part('parts/headers'); ?>
-			<section class="row single recent-articles">
+			<section class="row single gutter marginalize-ends recent-articles">
 				<div class="column one">
 					<article>
 					<h1>Recent Articles</h1>
