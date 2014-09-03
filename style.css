@@ -75,7 +75,7 @@ article a,.archive .recent-articles a {
 .main-header {
 	height:190px;
 	background-color:#f9f9f9;
-	background-image: url('../img/homeBanner.jpg');
+	background-image: url('assets/img/homeBanner.jpg');
 	background-repeat: no-repeat;
 	background-size:auto, 100%;
 	background-position: -800px, 0px;
