@@ -8,7 +8,7 @@
 
 			<?php get_template_part('parts/headers'); ?>
 
-			<section class="row single">
+			<section class="row single gutter marginalize-ends">
 
 				<div class="column one">
 
@@ -20,7 +20,7 @@
 
 		<?php endwhile; endif; ?>
 
-		<section class="row single recent-articles">
+		<section class="row single gutter marginalize-ends recent-articles">
 			<div class="column one">
 			<article>
 		<h2 class="article-title">Today's Featured Articles</h2>
