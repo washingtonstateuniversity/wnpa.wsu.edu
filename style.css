@@ -79,6 +79,7 @@ article a,.archive .recent-articles a {
 	background-repeat: no-repeat;
 	background-size:auto, 100%;
 	background-position: -800px, 0px;
+	width: 300%;
 }
 .main-header .header-group {
 	display:none;
