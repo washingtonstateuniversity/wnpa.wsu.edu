@@ -17,7 +17,7 @@ Title: css file to tie the WNPA CSS and WSU Spine themes together; specifically 
 	-moz-osx-font-smoothing: grayscale;
 }
 body {
-	background-image: url('../img/dust-small.png');
+	background-image: url('assets/img/dust-small.png');
 	background-attachment: fixed;
 	background-size:60% 60%;
 	background-color:white;
