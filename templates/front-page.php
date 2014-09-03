@@ -8,7 +8,7 @@
 
 			<?php get_template_part('parts/headers'); ?>
 
-			<section class="row single">
+			<section class="row single gutter marginalize-ends">
 
 				<div class="column one">
 
@@ -20,10 +20,11 @@
 
 		<?php endwhile; endif; ?>
 
-		<section class="row single recent-articles">
+		<section class="row single gutter marginalize-ends recent-articles">
 			<div class="column one">
-			<article>
-		<h2 class="article-title">Today's Featured Articles</h2>
+				<article>
+					<h2 class="article-title">Today's Featured Articles</h2>
+
 				<?php
 				$recent_articles = new WP_Query( array(
 					'post_type' => 'wnpa_feed_item',
@@ -35,12 +36,14 @@
 						),
 					),
 				));
+
 				if ( $recent_articles->have_posts() ) : while( $recent_articles->have_posts() ) : $recent_articles->the_post();
 					$link_url = get_post_meta( get_the_ID(), '_feed_item_link_url', true );
 					$link_author = ucwords( strtolower( get_post_meta( get_the_ID(), '_feed_item_author', true ) ) );
 					$source_id = get_post_meta( get_the_ID(), '_feed_item_source', true );
 					$source = get_post( absint( $source_id ) );
 					?>
+
 					<article class="recent-article">
 					
 						<h3 class="recent-article-title"><a href="<?php echo esc_url( $link_url ); ?>"><?php the_title(); ?></a></h3>
@@ -52,10 +55,13 @@
 				<?php
 				endwhile; endif;
 				wp_reset_postdata(); ?>
-				<span class="link-all-feed-items"><a href="<?php echo esc_url( home_url( '/feed-items' ) ); ?>">View all recent articles.</a></span>
-			</article>
+
+					<span class="link-all-feed-items"><a href="<?php echo esc_url( home_url( '/feed-items' ) ); ?>">View all recent articles.</a></span>
+				</article>
 			</div>
-				</section>
+		</section>
 	</main>
 
-<?php get_footer(); ?>
+<?php
+
+get_footer();

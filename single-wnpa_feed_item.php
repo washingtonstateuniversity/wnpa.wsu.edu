@@ -2,7 +2,7 @@
 <main>
 
 <?php get_template_part('parts/headers'); ?>
-<section class="row single">
+<section class="row single gutter marginalize-ends">
 	<div class="column one">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
