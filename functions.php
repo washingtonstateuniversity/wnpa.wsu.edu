@@ -6,11 +6,14 @@ add_action( 'admin_menu', 'wnpa_alter_menu' );
  */
 function wnpa_alter_menu() {
 	global $menu;
-	$menu[5] = $menu[26];
-	$menu[6] = $menu[27];
-	unset( $menu[27] );
-	unset( $menu[26] );
-	unset( $menu[25] );
+	
+	if ( isset( $menu[26] ) && isset( $menu[27] ) ) {
+		$menu[5] = $menu[26];
+		$menu[6] = $menu[27];
+		unset( $menu[27] );
+		unset( $menu[26] );
+		unset( $menu[25] );
+	}
 }
 
 add_filter( 'excerpt_more', 'wnpa_excerpt_more' );
