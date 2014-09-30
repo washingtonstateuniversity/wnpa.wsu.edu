@@ -11,7 +11,10 @@
 						$link_author = ucwords( strtolower( get_post_meta( get_the_ID(), '_feed_item_author', true ) ) );
 						$source_id = get_post_meta( get_the_ID(), '_feed_item_source', true );
 						if ( empty( $source_id ) ) {
-							$source_title = 'Manual Entry';
+							$source_title = get_post_meta( get_the_ID(), '_feed_item_source_manual', true );
+							if ( empty( $source_title ) ) {
+								$source_title = 'Manual Entry';
+							}
 							$link_url = get_the_permalink();
 							$link_author = 'By ' . get_the_author();
 						} else {

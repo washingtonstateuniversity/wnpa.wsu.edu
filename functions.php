@@ -6,11 +6,24 @@ add_action( 'admin_menu', 'wnpa_alter_menu' );
  */
 function wnpa_alter_menu() {
 	global $menu;
-	$menu[5] = $menu[26];
-	$menu[6] = $menu[27];
-	unset( $menu[27] );
-	unset( $menu[26] );
-	unset( $menu[25] );
+
+	if ( isset( $menu[26] ) && isset( $menu[27] ) ) {
+		$menu[5] = $menu[26];
+		$menu[6] = $menu[27];
+		unset( $menu[27] );
+		unset( $menu[26] );
+		unset( $menu[25] );
+	}
+}
+
+add_action( 'admin_bar_menu', 'wnpa_alter_content_menu', 71 );
+/**
+ * Remove the new post option from the default content menu in the admin bar
+ *.
+ * @param WP_Admin_Bar $wp_admin_bar
+ */
+function wnpa_alter_content_menu( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'new-post' );
 }
 
 add_filter( 'excerpt_more', 'wnpa_excerpt_more' );
